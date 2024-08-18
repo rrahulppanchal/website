@@ -7,6 +7,14 @@ import { Title, SimpleGrid, Text, Button, ThemeIcon, Grid, rem } from '@mantine/
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons-react';
 import classes from './FeaturesTitle.module.css';
 import { FeaturesAsymmetrical } from '@/components/Feature/Feature';
+import { HomeHero } from '@/components/HomeHero/HomeHero';
+import { WhoWeAre } from '@/components/WhoWeAre/WhoWeAre';
+import { HomeStats } from '@/components/HomeStates/HomeStates';
+import { Skeleton, Container } from '@mantine/core';
+import { Testimonials } from '@/components/Testimonials/Testimonials';
+import { FAQs } from '@/components/FAQs/FAQs';
+const child = <Skeleton height={140} radius="md" animate={false} />;
+
 const features = [
   {
     icon: IconReceiptOff,
@@ -56,37 +64,27 @@ export default function HomePage() {
       <ColorSchemeToggle /> */}
       <HeaderMenu />
 
-      <div className={classes.wrapper}>
-        <Grid gutter={80}>
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <Title className={classes.title} order={2}>
-              A fully featured React components library for your next project
-            </Title>
-            <Text c="dimmed">
-              Build fully functional accessible web applications faster than ever – Mantine includes
-              more than 120 customizable components and hooks to cover you in any situation
-            </Text>
-
-            <Button
-              variant="gradient"
-              gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
-              size="lg"
-              radius="md"
-              mt="xl"
-            >
-              Get started
-            </Button>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <SimpleGrid cols={{ base: 1, md: 2 }} spacing={30}>
-              {items}
-            </SimpleGrid>
-          </Grid.Col>
-        </Grid>
-      </div>
-
+      <HomeHero />
       <FeaturesAsymmetrical />
-
+      <WhoWeAre />
+      <HomeStats />
+      <Container my="md">
+        <Grid>
+          <Grid.Col span={{ base: 12, xs: 4 }}>{child}</Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 4 }}>{child}</Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 3 }}>{child}</Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 3 }}>{child}</Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 6 }}>{child}</Grid.Col>
+        </Grid>
+      </Container>
+      <Container my="md">
+        <Testimonials />
+      </Container>
+      <Container my="md">
+        <FAQs />
+      </Container>
       <Footer />
     </>
   );

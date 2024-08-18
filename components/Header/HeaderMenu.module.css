@@ -3,6 +3,12 @@
   padding-left: var(--mantine-spacing-md);
   padding-right: var(--mantine-spacing-md);
   border-bottom: rem(2px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  z-index: 9;
 }
 
 .link {
