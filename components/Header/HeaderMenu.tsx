@@ -17,6 +17,11 @@ import {
   ScrollArea,
   rem,
   useMantineTheme,
+  Modal,
+  TextInput,
+  Grid,
+  Textarea,
+  Title,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -27,8 +32,15 @@ import {
   IconFingerprint,
   IconCoin,
   IconChevronDown,
+  IconAt,
+  IconUserScan,
+  IconMail,
+  IconPhone,
+  IconArmchair,
+  IconBuildingSkyscraper,
 } from '@tabler/icons-react';
 import classes from './HeaderMenu.module.css';
+import { useState } from 'react';
 
 const mockdata = [
   {
@@ -63,10 +75,85 @@ const mockdata = [
   },
 ];
 
+interface FormState {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  skypeId: string;
+  designation: string;
+  company: string;
+  message: string;
+}
+
+interface FormErrors {
+  email?: string;
+  phoneNumber?: string;
+  name?: string;
+}
+
 export function HeaderMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
+  const [opened, { open, close }] = useDisclosure(false);
+
+  const [formState, setFormState] = useState<FormState>({
+    name: '',
+    email: '',
+    phoneNumber: '',
+    skypeId: '',
+    designation: '',
+    company: '',
+    message: '',
+  });
+
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhoneNumber = (phoneNumber: string) => {
+    const phoneRegex = /^[0-9]{10}$/;
+    return phoneRegex.test(phoneNumber);
+  };
+
+  const validateForm = () => {
+    const errors: FormErrors = {};
+
+    if (!formState.email && !formState.phoneNumber && !formState.name) {
+      errors.email = 'Either Email is required';
+      errors.phoneNumber = 'Phone Number is required';
+      errors.name = 'Name is required';
+    } else {
+      if (formState.email && !validateEmail(formState.email)) {
+        errors.email = 'Invalid email address';
+      }
+      if (formState.phoneNumber && !validatePhoneNumber(formState.phoneNumber)) {
+        errors.phoneNumber = 'Invalid phone number';
+      }
+    }
+
+    setFormErrors(errors);
+
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Submit the form
+      console.log('Form Submitted:', formState);
+    }
+  };
 
   const links = mockdata.map((item) => (
     <UnstyledButton className={classes.subLink} key={item.title}>
@@ -151,7 +238,7 @@ export function HeaderMenu() {
 
           <Group visibleFrom="sm">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button onClick={open}>Quick connect</Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -196,10 +283,121 @@ export function HeaderMenu() {
 
           <Group justify="center" grow pb="xl" px="md">
             <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button onClick={open}>Quick connect</Button>
           </Group>
         </ScrollArea>
       </Drawer>
+      <Modal
+        opened={opened}
+        onClose={close}
+        title={<Title order={3}>Quick Connect</Title>}
+        centered
+        size="lg"
+      >
+        <form onSubmit={handleSubmit}>
+          <Grid>
+            <Grid.Col span={6}>
+              <TextInput
+                size="md"
+                placeholder="Name"
+                label="Full Name*"
+                type="text"
+                name="name"
+                error={formErrors.name}
+                value={formState.name}
+                onChange={handleInputChange}
+                leftSection={<IconUserScan size={20} />}
+              />
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <TextInput
+                size="md"
+                placeholder="Email"
+                label="Email*"
+                type="email"
+                name="email"
+                value={formState.email}
+                onChange={handleInputChange}
+                error={formErrors.email}
+                leftSection={<IconMail size={20} />}
+              />
+            </Grid.Col>
+          </Grid>
+          <Grid>
+            <Grid.Col span={6}>
+              <TextInput
+                mt="md"
+                size="md"
+                placeholder="Phone Number"
+                label="Phone Number*"
+                type="text"
+                name="phoneNumber"
+                value={formState.phoneNumber}
+                onChange={handleInputChange}
+                error={formErrors.phoneNumber}
+                leftSection={<IconPhone size={20} />}
+              />
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <TextInput
+                mt="md"
+                size="md"
+                placeholder="Skype/Google Id"
+                label="Skype/Google Id"
+                name="skypeId"
+                value={formState.skypeId}
+                onChange={handleInputChange}
+                leftSection={<IconAt size={20} />}
+              />
+            </Grid.Col>
+          </Grid>
+          <Grid>
+            <Grid.Col span={6}>
+              <TextInput
+                mt="md"
+                size="md"
+                placeholder="Product Manager"
+                label="Designation"
+                name="designation"
+                value={formState.designation}
+                onChange={handleInputChange}
+                leftSection={<IconArmchair size={20} />}
+              />
+            </Grid.Col>
+            <Grid.Col span={6}>
+              <TextInput
+                mt="md"
+                size="md"
+                placeholder="Company"
+                label="ABC Pvt"
+                name="company"
+                value={formState.company}
+                onChange={handleInputChange}
+                leftSection={<IconBuildingSkyscraper size={20} />}
+              />
+            </Grid.Col>
+          </Grid>
+          <Grid mt="md" mb="md">
+            <Grid.Col span={12}>
+              <Textarea
+                size="md"
+                placeholder="Your comment"
+                label="Message"
+                autosize
+                minRows={2}
+                name="message"
+                value={formState.message}
+                onChange={handleInputChange}
+              />
+            </Grid.Col>
+          </Grid>
+          <Grid m="8px" mb="md" justify="flex-end">
+            <Button size="md" type="submit">
+              Submit Application
+            </Button>
+          </Grid>
+        </form>
+      </Modal>
     </Box>
   );
 }
