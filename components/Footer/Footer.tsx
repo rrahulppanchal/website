@@ -1,8 +1,9 @@
 'use client';
-import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
+import { Text, Container, ActionIcon, Group, rem, Image } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './Footer.module.css';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import image from '../../assests/icons/logo.svg';
 
 const data = [
   {
@@ -60,8 +61,8 @@ export function Footer() {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <h1>VoxQ</h1>
-          <Text size="xs" c="dimmed" className={classes.description}>
+          <Image className={classes.logo} src={image.src} height="50px" alt="logo" />
+          <Text size="xs" c="dimmed" className={classes.description} ml="md">
             Build fully functional accessible web applications faster than ever
           </Text>
         </div>
@@ -69,7 +70,7 @@ export function Footer() {
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2024 VoxQ. All rights reserved.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

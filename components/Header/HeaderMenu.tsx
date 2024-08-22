@@ -22,6 +22,7 @@ import {
   Grid,
   Textarea,
   Title,
+  Image,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -41,6 +42,8 @@ import {
 } from '@tabler/icons-react';
 import classes from './HeaderMenu.module.css';
 import { useState } from 'react';
+import image from '../../assests/icons/logo.svg';
+import { useRouter } from 'next/navigation';
 
 const mockdata = [
   {
@@ -92,6 +95,7 @@ interface FormErrors {
 }
 
 export function HeaderMenu() {
+  const router = useRouter();
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
@@ -178,9 +182,17 @@ export function HeaderMenu() {
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           {/* <MantineLogo size={30} /> */}
-          <p>VoxQ</p>
+          <Image
+            className={classes.logo}
+            src={image.src}
+            height="45px"
+            alt="logo"
+            onClick={() => {
+              router.push('/');
+            }}
+          />
 
-          <Group h="100%" gap={0} visibleFrom="sm">
+          {/* <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
             </a>
@@ -234,10 +246,17 @@ export function HeaderMenu() {
             <a href="#" className={classes.link}>
               Academy
             </a>
-          </Group>
+          </Group> */}
 
           <Group visibleFrom="sm">
-            <Button variant="default">Log in</Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                router.push('/request');
+              }}
+            >
+              Request Demo
+            </Button>
             <Button onClick={open}>Quick connect</Button>
           </Group>
 
@@ -257,7 +276,7 @@ export function HeaderMenu() {
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
 
-          <a href="#" className={classes.link}>
+          {/* <a href="#" className={classes.link}>
             Home
           </a>
           <UnstyledButton className={classes.link} onClick={toggleLinks}>
@@ -279,10 +298,17 @@ export function HeaderMenu() {
             Academy
           </a>
 
-          <Divider my="sm" />
+          <Divider my="sm" /> */}
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
+            <Button
+              variant="default"
+              onClick={() => {
+                router.push('/request');
+              }}
+            >
+              Request Demo
+            </Button>
             <Button onClick={open}>Quick connect</Button>
           </Group>
         </ScrollArea>
