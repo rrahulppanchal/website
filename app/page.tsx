@@ -67,8 +67,8 @@ export default function HomePage() {
       <HomeHero />
       <FeaturesAsymmetrical />
       <WhoWeAre />
-      <HomeStats />
-      <Container my="md">
+      {/* <HomeStats /> */}
+      {/* <Container my="md">
         <Grid>
           <Grid.Col span={{ base: 12, xs: 4 }}>{child}</Grid.Col>
           <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
@@ -78,11 +78,14 @@ export default function HomePage() {
           <Grid.Col span={{ base: 12, xs: 3 }}>{child}</Grid.Col>
           <Grid.Col span={{ base: 12, xs: 6 }}>{child}</Grid.Col>
         </Grid>
-      </Container>
-      <Container my="md">
+      </Container> */}
+      {/* <Container my="md">
         <Testimonials />
-      </Container>
-      <Container my="md">
+      </Container> */}
+      <Container my="xl">
+        <Title order={1} m="xs" ml="0px">
+          Frequently asked questions
+        </Title>
         <FAQs />
       </Container>
       <Footer />

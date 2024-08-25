@@ -36,6 +36,8 @@ const data = [
 ];
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
       <Text<'a'>
@@ -70,7 +72,7 @@ export function Footer() {
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © 2024 VoxQ. All rights reserved.
+          ©{currentYear} VoxQ. All rights reserved.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">

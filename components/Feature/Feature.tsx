@@ -1,5 +1,13 @@
 import { Text, SimpleGrid, Container, rem } from '@mantine/core';
-import { IconTruck, IconCertificate, IconCoin } from '@tabler/icons-react';
+import {
+  IconTruck,
+  IconCertificate,
+  IconCoin,
+  IconDeviceDesktopAnalytics,
+  IconDeviceMobile,
+  IconTournament,
+  IconMessageUser,
+} from '@tabler/icons-react';
 import classes from './FeaturesAsymmetrical.module.css';
 
 interface FeatureProps extends React.ComponentPropsWithoutRef<'div'> {
@@ -28,22 +36,28 @@ function Feature({ icon: Icon, title, description, className, ...others }: Featu
 
 const mockdata = [
   {
-    icon: IconTruck,
-    title: 'Free Worldwide shipping',
+    icon: IconDeviceDesktopAnalytics,
+    title: 'Web-Based Solutions',
     description:
-      'As electricity builds up inside its body, it becomes more aggressive. One theory is that the electricity.',
+      'Web-based solutions scale with your business, offering secure, adaptable, and efficient applications for a robust digital presence.',
   },
   {
-    icon: IconCertificate,
-    title: 'Best Quality Product',
+    icon: IconDeviceMobile,
+    title: 'Mobile-Based Solutions',
     description:
-      'Slakoth’s heart beats just once a minute. Whatever happens, it is content to loaf around motionless.',
+      'Mobile-based solutions deliver versatile, responsive apps that enhance user experience and support your business growth on every device.',
   },
   {
-    icon: IconCoin,
-    title: 'Very Affordable Pricing',
+    icon: IconTournament,
+    title: 'IoT-Based Solutions',
     description:
-      'Thought to have gone extinct, Relicanth was given a name that is a variation of the name of the person who discovered.',
+      'IoT-based solutions connect and optimize devices to streamline operations, enhance data insights, and drive innovation across industries.',
+  },
+  {
+    icon: IconMessageUser,
+    title: 'Chat-Based Support',
+    description:
+      'Chat-based support offers real-time assistance through messaging, enhancing customer service with instant, personalized responses and efficient problem-solving.',
   },
 ];
 
@@ -51,8 +65,8 @@ export function FeaturesAsymmetrical() {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
-    <Container mt={30} mb={30} size="lg">
-      <SimpleGrid cols={{ base: 1, sm: 3 }} spacing={50}>
+    <Container mt={30} mb={30} size="xl">
+      <SimpleGrid cols={{ base: 1, sm: 4 }} spacing={50}>
         {items}
       </SimpleGrid>
     </Container>

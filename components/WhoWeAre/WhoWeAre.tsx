@@ -9,11 +9,12 @@ export function WhoWeAre() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            A <span className={classes.highlight}>modern</span> React <br /> components library
+            We focused on <br />
+            <span className={classes.highlight}>SUPERIOR</span> quality and achievement.
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional accessible web applications faster than ever – Mantine includes
-            more than 120 customizable components and hooks to cover you in any situation
+            Committed to upholding the highest standards, we focus on delivering outstanding results
+            and ensuring complete satisfaction by meticulously addressing every detail of our work.
           </Text>
 
           <List
@@ -27,16 +28,20 @@ export function WhoWeAre() {
             }
           >
             <List.Item>
-              <b>TypeScript based</b> – build type safe applications, all components and hooks
-              export types
+              <b>Detailed Project Planning</b> – Meticulous planning guarantees precision and
+              superior results.
             </List.Item>
             <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-              any project
+              <b>Transparent Communication</b> – Clear and open dialogue to align with expectations
+              and standards.
             </List.Item>
             <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
+              <b>Client Feedback Integration</b> – Actively incorporating feedback for continuous
+              refinement and satisfaction.
+            </List.Item>
+            <List.Item>
+              <b>Strict Compliance</b> – Adherence to industry regulations and best practices for
+              excellence.
             </List.Item>
           </List>
 

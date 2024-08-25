@@ -47,6 +47,23 @@
   }
 }
 
+.subTitle {
+  text-align: center;
+  font-weight: 800;
+  font-size: rem(25px);
+  letter-spacing: -1px;
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-4));
+  margin-bottom: var(--mantine-spacing-xs);
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: rem(28px);
+    text-align: left;
+  }
+}
+
 .highlight {
   color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
 }
