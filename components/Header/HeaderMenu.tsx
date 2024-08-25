@@ -265,6 +265,7 @@ export function HeaderMenu() {
             onClick={() => {
               router.push('/request');
             }}
+            hiddenFrom="sm"
           >
             Request Demo
           </Button>
