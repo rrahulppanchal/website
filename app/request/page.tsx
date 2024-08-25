@@ -189,7 +189,7 @@ export default function Request() {
                     // defaultValue={new Date()}
                     required
                     label="Preferred date and time"
-                    placeholder="Preferred date and time"
+                    placeholder="Preferred datetime"
                     leftSection={<IconCalendarTime size={18} />}
                   />
                 </Grid.Col>

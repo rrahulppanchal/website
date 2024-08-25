@@ -260,7 +260,14 @@ export function HeaderMenu() {
             <Button onClick={open}>Quick connect</Button>
           </Group>
 
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+          {/* <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" /> */}
+          <Button
+            onClick={() => {
+              router.push('/request');
+            }}
+          >
+            Request Demo
+          </Button>
         </Group>
       </header>
 

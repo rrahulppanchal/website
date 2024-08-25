@@ -59,7 +59,7 @@
     var(--mantine-font-family);
 
   @media (max-width: $mantine-breakpoint-xs) {
-    font-size: rem(28px);
+    font-size: rem(18px);
     text-align: left;
   }
 }

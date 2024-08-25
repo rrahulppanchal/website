@@ -83,7 +83,7 @@ export default function HomePage() {
         <Testimonials />
       </Container> */}
       <Container my="xl">
-        <Title order={1} m="xs" ml="0px">
+        <Title order={3} m="xs" ml="0px">
           Frequently asked questions
         </Title>
         <FAQs />
