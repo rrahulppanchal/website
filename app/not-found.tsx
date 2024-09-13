@@ -2,8 +2,10 @@
 import { Image, Container, Title, Text, Button, SimpleGrid } from '@mantine/core';
 import image from '../assests/icons/notfound.svg';
 import classes from '../assests/styles/NotFoundImage.module.css';
+import { useRouter } from 'next/navigation'
 
 export default function NotFoundImage() {
+  const router = useRouter()
   return (
     <>
       <Container className={classes.root}>
@@ -15,7 +17,7 @@ export default function NotFoundImage() {
               Page you are trying to open does not exist. You may have mistyped the address, or the
               page has been moved to another URL. If you think this is an error contact support.
             </Text>
-            <Button variant="outline" size="md" mt="xl" className={classes.control}>
+            <Button variant="outline" size="md" mt="xl" className={classes.control} onClick={() => router.push('/')}>
               Get back to home page
             </Button>
           </div>

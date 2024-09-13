@@ -7,30 +7,29 @@ import image from '../../assests/icons/logo.svg';
 
 const data = [
   {
-    title: 'About',
+    title: 'Company',
     links: [
-      { label: 'Features', link: '#' },
-      { label: 'Pricing', link: '#' },
-      { label: 'Support', link: '#' },
-      { label: 'Forums', link: '#' },
+      { label: 'About us', link: '/about', owns: true },
+      { label: 'Career', link: '/jobs', owns: true },
+      { label: 'Contact us', link: '/contact-us', owns: true },
+      { label: 'Privacy Policy', link: '/privacy-policy', owns: true },
     ],
   },
   {
     title: 'Project',
     links: [
-      { label: 'Contribute', link: '#' },
-      { label: 'Media assets', link: '#' },
-      { label: 'Changelog', link: '#' },
-      { label: 'Releases', link: '#' },
+      // { label: 'Products', link: '#', owns: true },
+      { label: 'Our work', link: '#', owns: true },
+      // { label: 'Releases', link: '#', owns: true },
     ],
   },
   {
     title: 'Community',
     links: [
-      { label: 'Join Discord', link: '#' },
-      { label: 'Follow on Twitter', link: '#' },
-      { label: 'Email newsletter', link: '#' },
-      { label: 'GitHub discussions', link: '#' },
+      { label: 'Follow on Linkedin', link: 'https://www.linkedin.com/company/lumosify', owns: false },
+      // { label: 'Follow on Twitter', link: '#' },
+      { label: 'Email newsletter', link: '/news-letter', owns: true },
+      { label: 'Blogs', link: '/blog', owns: true },
     ],
   },
 ];
@@ -42,10 +41,11 @@ export function Footer() {
     const links = group.links.map((link, index) => (
       <Text<'a'>
         key={index}
+        target={link.owns ? '_self' : '_blank'}
         className={classes.link}
         component="a"
         href={link.link}
-        onClick={(event) => event.preventDefault()}
+      // onClick={(event) => event.preventDefault()}
       >
         {link.label}
       </Text>
@@ -65,7 +65,7 @@ export function Footer() {
         <div className={classes.logo}>
           <Image className={classes.logo} src={image.src} height="50px" alt="logo" />
           <Text size="xs" c="dimmed" className={classes.description} ml="md">
-            Build fully functional accessible web applications faster than ever
+            Innovating Tomorrow, Today
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
