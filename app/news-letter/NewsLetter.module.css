@@ -3,7 +3,7 @@
   align-items: center;
   padding: calc(var(--mantine-spacing-xl) * 2);
   border-radius: var(--mantine-radius-md);
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
   margin-top: 55px;
   /* border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-8)); */
 

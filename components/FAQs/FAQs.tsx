@@ -6,15 +6,15 @@ export function FAQs() {
   return (
     <>
       <div className={classes.wrapper}>
-        <Container size="lg">
+        <Container size="xl">
           <Grid id="faq-grid" gutter={50} align="center">
             <Grid.Col span={{ base: 12, md: 6 }}>
               <Image src={image.src} alt="Frequently Asked Questions" />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 6 }}>
-              <Title order={2} ta="left" className={classes.title}>
+              {/* <Title order={2} ta="left" className={classes.title}>
                 Frequently Asked Questions
-              </Title>
+              </Title> */}
 
               <Accordion chevronPosition="right" defaultValue="reset-password" variant="separated">
                 <Accordion.Item className={classes.item} value="reset-password">

@@ -5,7 +5,7 @@ import classes from './HeroBullets.module.css';
 
 export function WhoWeAre() {
   return (
-    <Container size="md">
+    <Container size="lg">
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>

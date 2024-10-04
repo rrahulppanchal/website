@@ -16,6 +16,13 @@
   }
 }
 
+.highlight {
+  position: relative;
+  background-color: var(--mantine-color-blue-light);
+  border-radius: var(--mantine-radius-sm);
+  padding: rem(4px) rem(12px);
+}
+
 .control {
   @media (max-width: $mantine-breakpoint-sm) {
     width: 100%;

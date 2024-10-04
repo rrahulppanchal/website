@@ -14,3 +14,58 @@
   margin-bottom: var(--mantine-spacing-md);
   color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 }
+
+.mainTitle::after {
+  border-bottom: 3px solid red; /* Change thickness and color */
+}
+
+.mainTitle::before {
+  border-left: 4px solid blue;
+  border-top: 4px solid blue;
+}
+
+.mainTitle::after {
+  bottom: calc(-1rem * var(--mantine-scale)); /* Moves it further down */
+}
+
+.mainTitle::before {
+  top: calc(-1rem * var(--mantine-scale)); /* Moves it higher */
+  left: calc(-1.5rem * var(--mantine-scale)); /* Moves it further left */
+}
+
+.titleText {
+  font-size: 50px; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white)); /* White text color */
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 27px;
+    padding: 10px;
+  }
+}
+
+.titleText::before,
+.titleText::after {
+  content: '>'; /* Small square brackets */
+  font-size: 30px; /* Adjust size of brackets */
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white)); /* Bracket color */
+  position: absolute;
+  padding: 10px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 15px;
+    padding: 20px;
+  }
+}
+
+.titleText::before {
+  top: -15px;
+  left: -25px;
+}
+
+.titleText::after {
+  bottom: -15px;
+  right: -25px;
+  transform: rotate(180deg); /* Rotate the right corner */
+}

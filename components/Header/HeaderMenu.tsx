@@ -192,7 +192,7 @@ export function HeaderMenu() {
             }}
           />
 
-          {/* <Group h="100%" gap={0} visibleFrom="sm">
+          <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
             </a>
@@ -241,12 +241,12 @@ export function HeaderMenu() {
               </HoverCard.Dropdown>
             </HoverCard>
             <a href="#" className={classes.link}>
-              Learn
+              Docs
             </a>
             <a href="#" className={classes.link}>
-              Academy
+              Blog
             </a>
-          </Group> */}
+          </Group>
 
           <Group visibleFrom="sm">
             <Button
