@@ -6,33 +6,49 @@ import { IconAdjustments, IconExternalLink } from '@tabler/icons-react';
 
 const mockdata = [
   {
-    name: 'johndoe',
-    title: 'One of the best UI libraries I have come across.',
-    description: `I am a senior Frontend Developer and wanted to use something new instead of Material UI and came across this, it has been well thought of all the different scenarios you and come across, and the hooks are just pure love :) Thank you so much for this.`,
+    name: 'Sarah M. – New York, USA',
+    title: 'Exceptional E-commerce Platform Development',
+    description: `“Our experience with VoxQ was nothing short of exceptional. Their team built our e-commerce platform from the ground up, and the results were exactly what we envisioned. The attention to detail and willingness to go the extra mile made all the difference. We would highly recommend them for any web development needs.”`,
     image:
       'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
     date: 'August 18, 2022',
   },
   {
-    name: 'johndoe',
-    title: 'You nailed it!',
-    description: `I am a senior Frontend Developer and wanted to use something new instead of Material UI and came across this, it has been well thought of all the different scenarios you and come across, and the hooks are just pure love :) Thank you so much for this.`,
+    name: 'Raj K. – Bangalore, India',
+    title: 'Outstanding Custom CRM Solution',
+    description: `“I had the pleasure of working with team Rahul for a custom CRM solution, and I was thoroughly impressed with their technical expertise and communication. They not only delivered a highly functional product but also guided us through best practices for scaling the system. Fantastic team and great work!”`,
     image:
       'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
     date: 'August 18, 2022',
   },
   {
-    name: 'johndoe',
-    title: 'Thank you mantine 💘',
-    description: `I am a senior Frontend Developer and wanted to use something new instead of Material UI and came across this, it has been well thought of all the different scenarios you and come across, and the hooks are just pure love :) Thank you so much for this.`,
+    name: 'Emily W. – London, UK',
+    title: 'Impressive Corporate Website Redesign',
+    description: `“Rahul helped us redesign our corporate website, and the result was beyond our expectations. Their UX/UI expertise really showed through in the final product, making our site more user-friendly and visually appealing. The project was delivered on time and within budget. Highly recommended!”`,
     image:
       'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
     date: 'August 18, 2022',
   },
   {
-    name: 'johndoe',
-    title: 'Absurdly good',
-    description: `I am a senior Frontend Developer and wanted to use something new instead of Material UI and came across this, it has been well thought of all the different scenarios you and come across, and the hooks are just pure love :) Thank you so much for this.`,
+    name: 'John P. – Melbourne, Australia',
+    title: 'Robust SaaS Platform for Start-ups',
+    description: `“The developers at VoxQ truly understand the unique challenges of web-based SaaS solutions. They built a robust platform for our start-up and integrated multiple third-party services seamlessly. I’ve already recommended them to other founders in my network, and I’ll definitely be working with them again.”`,
+    image:
+      'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
+    date: 'August 18, 2022',
+  },
+  {
+    name: 'Sophie L. – Toronto, Canada',
+    title: 'Seamless Legacy System Migration to Cloud',
+    description: `“We had a complex project that involved migrating a legacy system to the cloud, and VoxQ handled it flawlessly. Their deep understanding of cloud infrastructure and attention to data integrity was impressive. It was a pleasure working with such a professional and skilled team!”`,
+    image:
+      'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
+    date: 'August 18, 2022',
+  },
+  {
+    name: 'Andreas H. – Berlin, Germany',
+    title: 'Top-notch Mobile App Development',
+    description: `“Team Rahul delivered a top-notch mobile app for our company, complete with all the features we needed and then some. Their agile development approach and transparent communication made the whole process smooth. I highly recommend them for any mobile development projects.”`,
     image:
       'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png',
     date: 'August 18, 2022',
