@@ -134,7 +134,7 @@ export function HeaderMenu() {
     const errors: FormErrors = {};
 
     if (!formState.email && !formState.phoneNumber && !formState.name) {
-      errors.email = 'Either Email is required';
+      errors.email = 'Email is required';
       errors.phoneNumber = 'Phone Number is required';
       errors.name = 'Name is required';
     } else {
@@ -193,7 +193,7 @@ export function HeaderMenu() {
           />
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className={classes.link}>
+            <a href="/" className={classes.link}>
               Home
             </a>
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>

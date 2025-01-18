@@ -71,7 +71,7 @@ export default function Request() {
     const errors: FormErrors = {};
 
     if (!formState.email && !formState.phoneNumber && !formState.name) {
-      errors.email = 'Either Email is required';
+      errors.email = 'Email is required';
       errors.phoneNumber = 'Phone Number is required';
       errors.name = 'Name is required';
     } else {
@@ -95,6 +95,7 @@ export default function Request() {
       console.log('Form Submitted:', formState);
     }
   };
+  
   return (
     <>
       <HeaderMenu />

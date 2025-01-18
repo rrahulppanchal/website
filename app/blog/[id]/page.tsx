@@ -18,7 +18,7 @@ interface Post {
 export const revalidate = 60;
 
 // We'll prerender only the params from `generateStaticParams` at build time.
-// If a request comes in for a path that hasn't been generated,
+// If a request comes in for a path that hasn't been genera`ted,
 // Next.js will server-render the page on-demand.
 export const dynamicParams = true; // or false, to 404 on unknown paths
 

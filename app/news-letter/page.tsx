@@ -17,7 +17,6 @@ export default function NewsLetter() {
                         <Text fw={500} fz="lg" mb={5}>
                             Subscribe to our newsletter!
                         </Text>
-                        <a href={googleSearchUrl}>sfsdfsd</a>
                         <Text fz="sm" c="dimmed">
                             You will never miss important product updates, latest news and community QA sessions. Our
                             newsletter is once a week, every Sunday.

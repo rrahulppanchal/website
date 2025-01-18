@@ -57,7 +57,7 @@ const mockdata = [
 
 export function Testimonials() {
   const cards = mockdata.map((article) => (
-    <Card key={article.title} p="md" radius="md" component="a" href="#" className={classes.card}>
+    <Card key={article.title} p="md" radius="md"  className={classes.card}>
       {/* <AspectRatio ratio={1920 / 1080}>
         <Image src={article.image} />
       </AspectRatio> */}
@@ -67,9 +67,9 @@ export function Testimonials() {
       <div className={classes.headTitle}>
         <div className={classes.headTitleContent}>
           <Avatar
-            component="a"
+            // component="a"
             // href={article.image}
-            target="_blank"
+            // target="_blank"
             src={article.image}
             alt="it's me"
           />
@@ -78,8 +78,8 @@ export function Testimonials() {
           </Text>
         </div>
         <ActionIcon
-          component="a"
-          href="https://mantine.dev"
+          // component="a"
+          // href="https://mantine.dev"
           variant="filled"
           color="gray"
           aria-label="Open in a new tab"
