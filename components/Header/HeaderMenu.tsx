@@ -44,6 +44,8 @@ import classes from './HeaderMenu.module.css';
 import { useState } from 'react';
 import image from '../../assests/icons/logo.svg';
 import { useRouter } from 'next/navigation';
+import { sendMail } from '@/lib/send-mail';
+import { serviceRequestEmail } from '@/utils/service-request-email';
 
 const mockdata = [
   {
@@ -112,6 +114,8 @@ export function HeaderMenu() {
   });
 
   const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const [formSubmitting, setFormSubmitting] = useState<boolean>(false);
+  const [isFormSubmitted, setFormSubmitted] = useState<boolean>(false);
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState({
@@ -129,6 +133,21 @@ export function HeaderMenu() {
     const phoneRegex = /^[0-9]{10}$/;
     return phoneRegex.test(phoneNumber);
   };
+
+  const resetForm = () => {
+    setFormState({
+      name: '',
+      email: '',
+      phoneNumber: '',
+      skypeId: '',
+      designation: '',
+      company: '',
+      message: '',
+    });
+    setFormErrors({});
+    // setFormSubmitting(false);
+    // setFormSubmitted(false);
+  }
 
   const validateForm = () => {
     const errors: FormErrors = {};
@@ -151,11 +170,30 @@ export function HeaderMenu() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
       // Submit the form
       console.log('Form Submitted:', formState);
+
+      setFormSubmitting(true)
+
+      const response = await sendMail({
+        email: "rahulpanchaloff@gmail.com",
+        subject: 'Service Requested',
+        html: serviceRequestEmail(formState.email, formState.name, formState.phoneNumber, formState.message, formState.skypeId,
+          formState.designation, formState.company),
+      });
+      if (response?.messageId) {
+        console.log('Application Submitted Successfully.');
+        setFormSubmitting(false)
+        setFormSubmitted(true);
+        resetForm()
+        
+      } else {
+        console.error('Failed To send application.');
+        setFormSubmitting(false)
+      }
     }
   };
 
@@ -274,7 +312,10 @@ export function HeaderMenu() {
 
       <Drawer
         opened={drawerOpened}
-        onClose={closeDrawer}
+        onClose={()=>{
+          closeDrawer();
+          resetForm();
+        }}
         size="100%"
         padding="md"
         title="Navigation"
@@ -426,9 +467,22 @@ export function HeaderMenu() {
             </Grid.Col>
           </Grid>
           <Grid m="8px" mb="md" justify="flex-end">
-            <Button size="md" type="submit">
-              Submit Application
-            </Button>
+            {isFormSubmitted ? <Button onClick={()=>{
+              closeDrawer();
+              resetForm();
+            }}>Done</Button> : <Button size="md" type="submit" disabled={formSubmitting}>
+              {formSubmitting ? "Submitting Application" : "Submit Application"}
+            </Button>}
+          </Grid>
+          <Grid m="8px" mb="md" justify="flex-start">
+            {isFormSubmitted && <Text
+              size="xl"
+              fw={900}
+              variant="gradient"
+              gradient={{ from: 'teal', to: 'lime', deg: 61 }}
+            >
+              Application has been submitted successfully.
+            </Text>}
           </Grid>
         </form>
       </Modal>
