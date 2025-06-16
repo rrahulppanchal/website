@@ -39,6 +39,13 @@ import {
   IconPhone,
   IconArmchair,
   IconBuildingSkyscraper,
+  IconDevices,
+  IconDeviceLaptop,
+  IconCloud,
+  IconAi,
+  IconSignature,
+  IconDeviceImacCog,
+  IconBrain,
 } from '@tabler/icons-react';
 import classes from './HeaderMenu.module.css';
 import { useState } from 'react';
@@ -49,34 +56,40 @@ import { serviceRequestEmail } from '@/utils/service-request-email';
 
 const mockdata = [
   {
-    icon: IconCode,
-    title: 'Open source',
-    description: 'This Pokémon’s cry is very loud and distracting',
+    icon: IconDeviceLaptop,
+    title: 'Custom Software Development',
+    link: 'custom-software-development',
+    description: 'Bespoke software tailored to fit the way you work and scale as you grow.',
   },
   {
-    icon: IconCoin,
-    title: 'Free for everyone',
-    description: 'The fluid of Smeargle’s tail secretions changes',
+    icon: IconDevices,
+    title: 'Web & Mobile App Development',
+    link: 'web-mobile-app-development',
+    description: 'Engage your audience everywhere with responsive web platforms and intuitive mobile apps.',
   },
   {
-    icon: IconBook,
-    title: 'Documentation',
-    description: 'Yanma is capable of seeing 360 degrees without',
+    icon: IconCloud,
+    title: 'Cloud Consulting',
+    link: 'cloud-consulting',
+    description: 'Unlock efficiency and flexibility with intelligent cloud strategies and migrations.',
   },
   {
-    icon: IconFingerprint,
-    title: 'Security',
-    description: 'The shell’s rounded shape and the grooves on its.',
+    icon: IconBrain,
+    title: 'AI/ML Solutions',
+    link: 'ai-ml-solutions',
+    description: 'Gain a competitive edge with data-driven automation, AI, and machine learning.',
   },
   {
-    icon: IconChartPie3,
-    title: 'Analytics',
-    description: 'This Pokémon uses its flying ability to quickly chase',
+    icon: IconSignature,
+    title: 'UI/UX Design',
+    link: 'ui-ux-design',
+    description: 'Deliver delightful user journeys with stunning interfaces and seamless experiences.',
   },
   {
-    icon: IconNotification,
-    title: 'Notifications',
-    description: 'Combusken battles with the intensely hot flames it spews',
+    icon: IconDeviceImacCog,
+    title: 'Support & Maintenance',
+    link: 'support-maintenance',
+    description: 'Keep your systems running at peak performance — we’re with you every step of the way.',
   },
 ];
 
@@ -198,7 +211,9 @@ export function HeaderMenu() {
   };
 
   const links = mockdata.map((item) => (
-    <UnstyledButton className={classes.subLink} key={item.title}>
+    <UnstyledButton className={classes.subLink} key={item.title} onClick={()=>{
+      router.push(`/services/${item.link}`);
+    }}>
       <Group wrap="nowrap" align="flex-start">
         <ThemeIcon size={34} variant="default" radius="md">
           <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
@@ -239,7 +254,7 @@ export function HeaderMenu() {
                 <a href="#" className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Features
+                      Services
                     </Box>
                     <IconChevronDown
                       style={{ width: rem(16), height: rem(16) }}
@@ -251,7 +266,7 @@ export function HeaderMenu() {
 
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
                 <Group justify="space-between" px="md">
-                  <Text fw={500}>Features</Text>
+                  <Text fw={500}>Services</Text>
                   <Anchor href="#" fz="xs">
                     View all
                   </Anchor>
@@ -270,7 +285,7 @@ export function HeaderMenu() {
                         Get started
                       </Text>
                       <Text size="xs" c="dimmed">
-                        Their food sources have decreased, and their numbers
+                      Bring your vision to life with our full-spectrum digital services
                       </Text>
                     </div>
                     <Button variant="default">Get started</Button>

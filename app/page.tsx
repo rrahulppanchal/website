@@ -13,6 +13,7 @@ import { HomeStats } from '@/components/HomeStates/HomeStates';
 import { Skeleton, Container } from '@mantine/core';
 import { Testimonials } from '@/components/Testimonials/Testimonials';
 import { FAQs } from '@/components/FAQs/FAQs';
+import { OurApproach } from '@/components/OurApproach/OurApproach';
 const child = <Skeleton height={140} radius="md" animate={false} />;
 
 const features = [
@@ -70,6 +71,10 @@ export default function HomePage() {
         <div className={classes.titleText}>Who we are</div>
       </Container>
       <WhoWeAre />
+      <Container size="xl">
+        <div className={classes.titleText}>Our Approach</div>
+      </Container>
+      <OurApproach />
       {/* <HomeStats /> */}
       {/* <Container my="md">
         <Grid>
