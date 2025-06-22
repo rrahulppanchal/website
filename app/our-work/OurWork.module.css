@@ -1,0 +1,54 @@
+.wrapper {
+    padding-top: rem(20px);
+    padding-bottom: rem(80px);
+    margin-top: 80px;
+}
+
+.title {
+    font-size: rem(44px);
+    font-weight: 900;
+    line-height: 1.1;
+
+    @media (max-width: em(768px)) {
+        font-size: rem(32px);
+    }
+}
+
+.description {
+    max-width: rem(600px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    position: relative;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+    
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: var(--mantine-shadow-lg);
+    }
+}
+  
+.title_card {
+    margin-top: var(--mantine-spacing-md);
+    margin-bottom: rem(5px);
+}
+  
+.rating {
+    position: absolute;
+    top: var(--mantine-spacing-xs);
+    right: rem(12);
+    pointer-events: none;
+}
+
+.body {
+    padding-right: calc(var(--mantine-spacing-xl) * 4);
+
+    @media (max-width: em(768px)) {
+        padding-right: 0;
+        margin-top: var(--mantine-spacing-xl);
+    }
+}

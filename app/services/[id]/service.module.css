@@ -1,5 +1,46 @@
-.desktopImage {
-    @media (max-width: 47.99em) {
-        display: none;
+.wrapper {
+    padding-top: rem(50px);
+    padding-bottom: rem(80px);
+  }
+  
+  .header {
+    max-width: rem(800px);
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: var(--mantine-spacing-xl);
+  }
+  
+  .title {
+    font-size: rem(44px);
+    font-weight: 900;
+    line-height: 1.1;
+  
+    @media (max-width: em(768px)) {
+      font-size: rem(32px);
     }
-}
+  }
+  
+  .subtitle {
+    font-size: var(--mantine-font-size-xl);
+    color: var(--mantine-color-dimmed);
+    margin-top: var(--mantine-spacing-sm);
+  }
+  
+  .description {
+    line-height: 1.6;
+  }
+  
+  .sectionTitle {
+    font-weight: 700;
+    font-size: var(--mantine-font-size-lg);
+    border-bottom: rem(2px) solid;
+    padding-bottom: var(--mantine-spacing-xs);
+    margin-bottom: var(--mantine-spacing-md);
+    display: inline-block;
+  }
+  
+  .sticky {
+    position: sticky;
+    top: rem(100px);
+    align-self: flex-start;
+  }

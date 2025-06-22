@@ -267,7 +267,7 @@ export function HeaderMenu() {
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
                 <Group justify="space-between" px="md">
                   <Text fw={500}>Services</Text>
-                  <Anchor href="#" fz="xs">
+                  <Anchor href="/services" fz="xs">
                     View all
                   </Anchor>
                 </Group>
@@ -293,6 +293,9 @@ export function HeaderMenu() {
                 </div>
               </HoverCard.Dropdown>
             </HoverCard>
+            <a href="/our-work" className={classes.link}>
+              Our Work
+            </a>
             <a href="#" className={classes.link}>
               Docs
             </a>

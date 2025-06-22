@@ -1,8 +1,5 @@
-import SoftwareDeveloperIcon from '../../assests/icons/sofware-developer.svg';
-import DesignIcon from '../../assests/icons/design.svg';
-import CloudIcon from '../../assests/icons/cloud.svg';
-import AiAgentIcon from '../../assests/icons/ai-agent.svg';
-import WorkingIcon from '../../assests/icons/working.svg';
+import { Icon, IconBrain, IconCloud, IconDeviceImacCog, IconDeviceLaptop, IconDevices, IconProps, IconSignature } from '@tabler/icons-react';
+import { ForwardRefExoticComponent, RefAttributes } from 'react';
 
 export type ServiceData = {
   id: string;
@@ -13,7 +10,7 @@ export type ServiceData = {
   process: string[];
   cta: string;
   ctaText: string;
-  icon: string;
+  icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
 };
 
 export const servicesData: ServiceData[] = [
@@ -36,7 +33,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: '/contact-us',
     ctaText: 'Contact us',
-    icon: SoftwareDeveloperIcon,
+    icon: IconDeviceLaptop,
   },
   {
     id: 'web-mobile-app-development',
@@ -57,7 +54,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: '/contact-us',
     ctaText: 'Book a free consultation',
-    icon: DesignIcon,
+    icon: IconDevices,
   },
   {
     id: 'cloud-consulting',
@@ -78,7 +75,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: '/contact-us',
     ctaText: 'Talk to our cloud experts',
-    icon: CloudIcon,
+    icon: IconCloud,
   },
   {
     id: 'ai-ml-solutions',
@@ -100,7 +97,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: '/contact-us',
     ctaText: 'Schedule a discovery session',
-    icon: AiAgentIcon,
+    icon: IconBrain,
   },
   {
     id: 'ui-ux-design',
@@ -122,7 +119,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: '/contact-us',
     ctaText: 'Start your design journey',
-    icon: DesignIcon,
+    icon: IconSignature,
   },
   {
     id: 'support-maintenance',
@@ -144,6 +141,6 @@ export const servicesData: ServiceData[] = [
     ],
     cta: '/contact-us',
     ctaText: 'Get reliable support',
-    icon: WorkingIcon,
+    icon: IconDeviceImacCog,
   },
 ]; 
