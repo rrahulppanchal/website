@@ -89,7 +89,7 @@ const mockdata = [
     icon: IconDeviceImacCog,
     title: 'Support & Maintenance',
     link: 'support-maintenance',
-    description: 'Keep your systems running at peak performance — we’re with you every step of the way.',
+    description: 'Keep your systems running at peak performance — we\'re with you every step of the way.',
   },
 ];
 
@@ -288,7 +288,7 @@ export function HeaderMenu() {
                       Bring your vision to life with our full-spectrum digital services
                       </Text>
                     </div>
-                    <Button variant="default">Get started</Button>
+                    <Button variant="default" onClick={() => router.push('/services')}>Get started</Button>
                   </Group>
                 </div>
               </HoverCard.Dropdown>

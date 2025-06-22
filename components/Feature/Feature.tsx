@@ -1,12 +1,11 @@
 import { Text, SimpleGrid, Container, rem } from '@mantine/core';
 import {
-  IconTruck,
-  IconCertificate,
-  IconCoin,
-  IconDeviceDesktopAnalytics,
-  IconDeviceMobile,
-  IconTournament,
-  IconMessageUser,
+  IconBrain,
+  IconCloud,
+  IconDeviceLaptop,
+  IconDevices,
+  IconSignature,
+  IconDeviceImacCog,
 } from '@tabler/icons-react';
 import classes from './FeaturesAsymmetrical.module.css';
 
@@ -36,28 +35,34 @@ function Feature({ icon: Icon, title, description, className, ...others }: Featu
 
 const mockdata = [
   {
-    icon: IconDeviceDesktopAnalytics,
-    title: 'Web-Based Solutions',
+    icon: IconBrain,
+    title: 'AI/ML Solutions',
     description:
-      'Web-based solutions scale with your business, offering secure, adaptable, and efficient applications for a robust digital presence.',
+      'Leverage advanced AI agents and machine learning to automate, predict, and optimize your business processes for the future.',
   },
   {
-    icon: IconDeviceMobile,
-    title: 'Mobile-Based Solutions',
+    icon: IconCloud,
+    title: 'Cloud Consulting',
     description:
-      'Mobile-based solutions deliver versatile, responsive apps that enhance user experience and support your business growth on every device.',
+      'Modernize and scale with secure, intelligent cloud solutions—enabling seamless AI integration and data-driven growth.',
   },
   {
-    icon: IconTournament,
-    title: 'IoT-Based Solutions',
+    icon: IconDevices,
+    title: 'Web & Mobile Solutions',
     description:
-      'IoT-based solutions connect and optimize devices to streamline operations, enhance data insights, and drive innovation across industries.',
+      'Build smart, responsive web and mobile applications powered by AI for superior user experiences and business agility.',
   },
   {
-    icon: IconMessageUser,
-    title: 'Chat-Based Support',
+    icon: IconSignature,
+    title: 'UI/UX Design',
     description:
-      'Chat-based support offers real-time assistance through messaging, enhancing customer service with instant, personalized responses and efficient problem-solving.',
+      'Design intuitive, AI-enhanced interfaces that delight users and drive engagement across all platforms.',
+  },
+  {
+    icon: IconDeviceImacCog,
+    title: 'Support & Maintenance',
+    description:
+      'Keep your AI-powered systems running smoothly with proactive support, monitoring, and continuous improvement.',
   },
 ];
 
@@ -66,7 +71,7 @@ export function FeaturesAsymmetrical() {
 
   return (
     <Container mt={30} mb={30} size="xl">
-      <SimpleGrid cols={{ base: 1, sm: 4 }} spacing={50}>
+      <SimpleGrid cols={{ base: 1, sm: 5 }} spacing={50}>
         {items}
       </SimpleGrid>
     </Container>

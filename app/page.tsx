@@ -68,11 +68,27 @@ export default function HomePage() {
       <HomeHero />
       <FeaturesAsymmetrical />
       <Container size="xl">
-        <div className={classes.titleText}>Who we are</div>
+        <div className={classes.centeredTitleWrapper}>
+          <div className={classes.multiColorTitle}>
+            <span className={classes.word1}>Who</span>{' '}
+            <span className={classes.word2}>we are</span>{' '}
+          </div>
+          <div className={classes.subtitle}>
+            Learn more about our mission, values, and the passionate team driving our vision forward.
+          </div>
+        </div>
       </Container>
       <WhoWeAre />
       <Container size="xl">
-        <div className={classes.titleText}>Our Approach</div>
+        <div className={classes.centeredTitleWrapper}>
+          <div className={classes.multiColorTitle}>
+            <span className={classes.word1}>Our</span>{' '}
+            <span className={classes.word2}>Approach</span>
+          </div>
+          <div className={classes.subtitle}>
+            Discover our unique process and strategies that set us apart in delivering exceptional results.
+          </div>
+        </div>
       </Container>
       <OurApproach />
       {/* <HomeStats /> */}
@@ -88,11 +104,25 @@ export default function HomePage() {
         </Grid>
       </Container> */}
       <Container size="xl">
-        <div className={classes.titleText}>Testimonials</div>
+        <div className={classes.centeredTitleWrapper}>
+          <div className={classes.multiColorTitle}>
+            <span className={classes.word2}>Testimonials</span>
+          </div>
+          <div className={classes.subtitle}>
+            Hear from our clients and partners about their experiences working with us.
+          </div>
+        </div>
       </Container>
       <Testimonials />
       <Container size="xl">
-        <div className={classes.titleText}>FAQs</div>
+        <div className={classes.centeredTitleWrapper}>
+          <div className={classes.multiColorTitle}>
+            <span className={classes.word2}>FAQs</span>
+          </div>
+          <div className={classes.subtitle}>
+            Find answers to the most common questions about our services and process.
+          </div>
+        </div>
       </Container>
       <Container size="xl">
         <FAQs />

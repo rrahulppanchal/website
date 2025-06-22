@@ -1,29 +1,125 @@
 .card {
-  transition:
-    transform 150ms ease,
-    box-shadow 150ms ease;
-    border: 2px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
-
-  &:hover {
-    transform: scale(1.01);
-    box-shadow: var(--mantine-shadow-md);
-  }
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.08), 0 1.5px 6px rgba(0,0,0,0.04);
+  padding-top: 32px;
+  margin-bottom: 32px;
+  overflow: visible;
+  border: none;
+  transition: box-shadow 0.2s;
 }
 
-.title {
-  font-family: 'Greycliff CF', var(--mantine-font-family);
-  font-weight: bold;
+.card::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, #2196f3 0%, #00bcd4 100%);
 }
 
 .headTitle {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: 8px;
+  position: relative;
 }
 
 .headTitleContent {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
+  gap: 12px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+  border-radius: 50%;
+  /* position: absolute; */
+  /* top: -44px;
+  left: 16px; */
+  background: #fff;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #222;
+}
+.location {
+  font-size: 0.95rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.title {
+  font-family: 'Greycliff CF', var(--mantine-font-family);
+  font-weight: 700;
+  color: #2196f3;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.quote {
+  position: relative;
+  font-style: italic;
+  color: #333;
+  padding-left: 32px;
+  margin-bottom: 8px;
+}
+
+.quote::before {
+  content: '“';
+  position: absolute;
+  left: 0;
+  top: -8px;
+  font-size: 2.5rem;
+  color: #e3f2fd;
+  font-family: serif;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .card {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin-bottom: 18px;
+    padding-top: 24px;
+  }
+  .avatar {
+    width: 44px;
+    height: 44px;
+    top: -34px;
+    left: 12px;
+  }
+}
+
+.button {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 32px auto 0 auto;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2196f3 0%, #00bcd4 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #1976d2 0%, #0097a7 100%);
 }

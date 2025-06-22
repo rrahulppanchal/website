@@ -18,16 +18,21 @@ const data = [
   {
     title: 'Project',
     links: [
-      // { label: 'Products', link: '#', owns: true },
-      { label: 'Our work', link: '#', owns: true },
-      // { label: 'Releases', link: '#', owns: true },
+      { label: 'Our work', link: '/our-work', owns: true },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'FAQs', link: '/#faq-grid', owns: true },
+      { label: 'Testimonials', link: '/#testimonials', owns: true },
+      { label: 'Docs', link: '/docs', owns: true },
     ],
   },
   {
     title: 'Community',
     links: [
       { label: 'Follow on Linkedin', link: 'https://www.linkedin.com/company/lumosify', owns: false },
-      // { label: 'Follow on Twitter', link: '#' },
       { label: 'Email newsletter', link: '/news-letter', owns: true },
       { label: 'Blogs', link: '/blog', owns: true },
     ],

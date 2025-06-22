@@ -21,6 +21,9 @@ import {
   IconMail,
   IconPhone,
   IconUserScan,
+  IconRobot,
+  IconBrain,
+  IconCpu,
 } from '@tabler/icons-react';
 
 interface FormState {
@@ -111,24 +114,31 @@ export function HomeHero() {
         <Dots className={classes.dots} style={{ right: 0, top: 60 }} />
 
         <div className={classes.inner}>
-          <Title className={classes.subTitle}>AI-Powered Development</Title>
+          <Title className={classes.subTitle}>AI Agents & Solutions</Title>
           <Title className={classes.title}>
-            Your{' '}
-            <Text component="span" className={classes.highlight} inherit>
-              strategic ally
-            </Text>{' '}
-            in driving{' '}
-            <Text component="span" className={classes.highlight} inherit>
-              digital innovation
-            </Text>{' '}
+            Building the <Text component="span" className={classes.highlight} inherit>future</Text> with <Text component="span" className={classes.highlight} inherit>AI-driven</Text> software
           </Title>
 
           <Container p={0} size={600}>
             <Text size="lg" c="dimmed" className={classes.description}>
-              Elevate your software projects with AI, identifying and eliminating unproductive
-              habits along the way.
+              We specialize in developing advanced AI agents, automation tools, and intelligent solutions that transform businesses. Harness the power of machine learning, natural language processing, and custom AI to accelerate your digital journey.
             </Text>
           </Container>
+
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 32, margin: '32px 0' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <IconRobot size={28} color={theme.colors.blue[6]} />
+              <Text size="md">AI Agents</Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <IconBrain size={28} color={theme.colors.blue[6]} />
+              <Text size="md">Machine Learning</Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <IconCpu size={28} color={theme.colors.blue[6]} />
+              <Text size="md">Automation</Text>
+            </div>
+          </div>
 
           <div className={classes.controls}>
             <Button
@@ -140,10 +150,10 @@ export function HomeHero() {
                 router.push('/request');
               }}
             >
-              Book a demo
+              Request AI Demo
             </Button>
             <Button className={classes.control} size="lg" onClick={open}>
-              Quick Connect
+              See AI in Action
             </Button>
           </div>
         </div>

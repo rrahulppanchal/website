@@ -13,6 +13,26 @@
 }
 
 .item {
-  font-size: var(--mantine-font-size-sm);
+  font-size: var(--mantine-font-size-md);
   color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(33, 150, 243, 0.07);
+  margin-bottom: 18px;
+  padding: 18px 24px 18px 18px;
+  position: relative;
+  border-left: 6px solid;
+  border-image: linear-gradient(180deg, #2196f3 0%, #00bcd4 100%) 1;
+}
+
+.item .mantine-Accordion-control {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1976d2;
+}
+
+.item .mantine-Accordion-panel {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 6px;
 }
