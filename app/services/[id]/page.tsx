@@ -4,7 +4,8 @@ import { servicesData } from '../servicesData';
 import { Container, Title, Text, List, Button, Group, Grid, Image, Box } from '@mantine/core';
 import { HeaderMenu } from '@/components/Header/HeaderMenu';
 import { Footer } from '@/components/Footer/Footer';
-
+import DesignIcon from '@/assests/icons/design.svg';
+import classes from './service.module.css';
 
 export default function ServicePage({ params }: { params: { id: string } }) {
     const service = servicesData.find((s) => s.id === params.id);
@@ -38,11 +39,12 @@ export default function ServicePage({ params }: { params: { id: string } }) {
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>
               <Box style={{ display: 'flex', justifyContent: 'center' }}>
-                <Image src={service.icon} alt={service.title} w={260} h={260} fit="contain" />
+                <Image src={(service.icon as any).src} alt={service.title} className={classes.desktopImage} />
               </Box>
             </Grid.Col>
           </Grid>
         </Container>
+        <Footer />
     </>
     );
 } 

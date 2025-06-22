@@ -2,6 +2,7 @@ import SoftwareDeveloperIcon from '../../assests/icons/sofware-developer.svg';
 import DesignIcon from '../../assests/icons/design.svg';
 import CloudIcon from '../../assests/icons/cloud.svg';
 import AiAgentIcon from '../../assests/icons/ai-agent.svg';
+import WorkingIcon from '../../assests/icons/working.svg';
 
 export type ServiceData = {
   id: string;
@@ -100,5 +101,49 @@ export const servicesData: ServiceData[] = [
     cta: '/contact-us',
     ctaText: 'Schedule a discovery session',
     icon: AiAgentIcon,
+  },
+  {
+    id: 'ui-ux-design',
+    title: 'UI/UX Design',
+    subtitle: 'Delightful Experiences, Thoughtfully Crafted',
+    description:
+      `Great design is more than just aesthetics—it's about creating intuitive, engaging, and accessible experiences. Our UI/UX experts blend creativity with usability to design interfaces that captivate users and drive results, whether you need a new product, a redesign, or ongoing design support.`,
+    features: [
+      'User research and persona development',
+      'Wireframing and prototyping',
+      'High-fidelity UI design',
+      'Usability testing and iteration',
+    ],
+    process: [
+      'Discovery: Understand your users, goals, and challenges.',
+      'Wireframing: Rapid prototyping and feedback loops.',
+      'Design: Pixel-perfect, brand-aligned UI creation.',
+      'Testing: Validate with real users and iterate.',
+    ],
+    cta: '/contact-us',
+    ctaText: 'Start your design journey',
+    icon: DesignIcon,
+  },
+  {
+    id: 'support-maintenance',
+    title: 'Support & Maintenance',
+    subtitle: 'Reliable Care for Your Digital Assets',
+    description:
+      'Keep your software, apps, and systems running smoothly with our proactive support and maintenance services. We handle updates, bug fixes, monitoring, and enhancements so you can focus on your business, not IT headaches.',
+    features: [
+      '24/7 monitoring and incident response',
+      'Regular updates and security patches',
+      'Performance optimization',
+      'Feature enhancements and bug fixes',
+    ],
+    process: [
+      'Onboarding: Assess your systems and needs.',
+      'Setup: Implement monitoring and maintenance routines.',
+      'Ongoing Support: Proactive care and rapid response.',
+      'Continuous Improvement: Regular reviews and enhancements.',
+    ],
+    cta: '/contact-us',
+    ctaText: 'Get reliable support',
+    icon: WorkingIcon,
   },
 ]; 
