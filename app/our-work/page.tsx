@@ -7,8 +7,8 @@ import classes from "./OurWork.module.css"
 import { projectsData } from "./projectsData";
 
 export default function OurWorkPage() {
-    const cards = projectsData.map((project) => (
-        <Card key={project.title} p="md" radius="md" component="a" href="#" className={classes.card}>
+    const cards = projectsData.map((project, idx) => (
+        <Card key={project.title} p="md" radius="md" component="a" href={`/our-work/${idx}`} className={classes.card}>
           <Card.Section>
             <Image src={project.image} alt={project.title} height={180} />
           </Card.Section>
